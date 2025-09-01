@@ -5,7 +5,7 @@ import axios from "./api/axios";
 
 const App = () => {
   const getData = async () => {
-    const res =  await axios.get("/comments");
+    const res = await axios.get("/comments");
     console.log(res);
   };
   getData();
@@ -19,3 +19,4 @@ const App = () => {
 };
 
 export default App;
+
