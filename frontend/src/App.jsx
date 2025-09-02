@@ -4,6 +4,8 @@ import Mainroutes from "./routes/Mainroutes";
 import axios from "./api/axios";
 
 const App = () => {
+
+  let a=0
   const getData = async () => {
     const res = await axios.get("/comments");
     console.log(res);
