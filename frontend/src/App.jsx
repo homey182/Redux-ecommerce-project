@@ -1,19 +1,16 @@
-import React from "react";
+import { useDispatch } from "react-redux";
 import Navbar from "./components/Navbar";
 import Mainroutes from "./routes/Mainroutes";
-import axios from "./api/axios";
+import { useEffect } from "react";
+import { asyncCurrentUser } from "./store/actions/userActions";
 
 const App = () => {
-
-  let a=0
-  const getData = async () => {
-    const res = await axios.get("/comments");
-    console.log(res);
-  };
-  getData();
-
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(asyncCurrentUser());
+  });
   return (
-    <div className="bg-gray-600 h-screen  w-screen">
+    <div className="bg-gray-700 h-screen  w-screen text-white font-thin px-[10%]">
       <Navbar />
       <Mainroutes />
     </div>
@@ -21,4 +18,3 @@ const App = () => {
 };
 
 export default App;
-
