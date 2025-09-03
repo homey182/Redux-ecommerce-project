@@ -1,9 +1,8 @@
 import axios from "../../api/axios";
-import { loadUser } from "../reducers/userSlice";
+import { loadUser, removeUser } from "../reducers/userSlice";
 export const asyncRegisterUser = (user) => async (dispatch, getState) => {
   try {
     const res = await axios.post("/users", user);
-    console.log(res);
   } catch (error) {
     console.log(error);
   }
@@ -14,17 +13,32 @@ export const asyncLoginUser = (user) => async (dispatch, getState) => {
     const { data } = await axios.get(
       `/users?email=${user.email}&password=${user.password}`
     );
-    localStorage.setItem("user", JSON.stringify(data[0]));
+    console.log(data);
+    if (data.length > 0) {
+      localStorage.setItem("user", JSON.stringify(data[0]));
+    } else console.log("user not logged in");
+  } catch (error) {
+    console.log("User not logged in", error);
+  }
+};
+
+export const asyncLoggoutUser = () => async (dispatch, getState) => {
+  try {
+    localStorage.removeItem("user");
+    dispatch(removeUser());
+    console.log("User logout successfuly");
   } catch (error) {
     console.log(error);
   }
 };
 
-export const asyncCurrentUser = () => (dispatch, getState) => {
+export const asyncCurrentUser = () => async (dispatch, getState) => {
   try {
-    const user = JSON.parse(localStorage.getItem("user"));
-    console.log(user);
-    dispatch(loadUser(user));
+    const user = JSON.parse(localStorage.getItem("user")) || null;
+    if (user) {
+      dispatch(loadUser(user));
+      console.log("user logged in successully");
+    } else console.log("user not logged in");
   } catch (error) {
     console.log(error);
   }

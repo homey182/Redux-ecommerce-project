@@ -1,20 +1,22 @@
 {
   "users": [
     {
-      "id": "NpsjXQmZHtNAzS3OWW3ld",
+      "id": "did8j8ohO_EdpIdfHJsZU",
       "username": "homey",
-      "email": "homey@gmail.com",
+      "email": "admin-homey@gmail.com",
       "password": "12345",
       "isAdmin": true
-    },
-    {
-      "id": "6gl925QRQlzYUCdkkWxHC",
-      "username": "home",
-      "email": "home@gmail.com",
-      "password": "12345",
-      "isAdmin": false
     }
   ],
-  "products": [],
+  "products": [
+    {
+      "id": "6ctU796sYnL_n1x72JUAe",
+      "image": "https://images.pexels.com/photos/12918198/pexels-photo-12918198.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "title": "",
+      "price": "55.55",
+      "description": "this is very tasty meal whic i erver tested \n",
+      "category": "french"
+    }
+  ],
   "carts": []
 }
