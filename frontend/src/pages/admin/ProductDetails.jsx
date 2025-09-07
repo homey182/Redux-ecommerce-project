@@ -35,6 +35,18 @@ const ProductDetails = () => {
     dispatch(asyncDeletProduct(id));
     navigate("/products");
   }
+  function addTocartHandler(id) {
+    const copyUser = { ...user, cart: [...user.cart] };
+    const x = copyUser.cart.findIndex((cart) => cart.id == id);
+    if (x == -1) {
+      copyUser.cart[x].push({ productId: id, quantity: 1 });
+    } else {
+      copyUser.cart[x] = {
+        productId: id,
+        quantity: copyUser.cart[x].quantity + 1,
+      };
+    }
+  }
 
   return product ? (
     <>
@@ -50,7 +62,10 @@ const ProductDetails = () => {
           <h2 className="text-3xl">${product?.price}</h2>
           <p>{product?.description}</p>
 
-          <button type="button"> Add to cart</button>
+          <button onClick={() => addTocartHandler(product.id)} type="button">
+            {" "}
+            Add to cart
+          </button>
         </div>
       </div>
       <hr />

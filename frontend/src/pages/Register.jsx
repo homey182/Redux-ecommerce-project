@@ -10,7 +10,7 @@ const Register = () => {
   const navigate = useNavigate();
   const registerHandler = (user) => {
     user.id = nanoid();
-    user.isAdmin = true;
+    user.isAdmin = false;
     dispatch(asyncRegisterUser(user));
     navigate("/login");
   };

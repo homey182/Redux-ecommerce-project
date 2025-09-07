@@ -1,11 +1,20 @@
 {
   "users": [
     {
-      "id": "did8j8ohO_EdpIdfHJsZU",
+      "id": "j9herEjU9tmHV2MxONT2E",
       "username": "homey",
       "email": "admin-homey@gmail.com",
       "password": "12345",
-      "isAdmin": true
+      "isAdmin": true,
+      "cart": []
+    },
+    {
+      "id": "Vz_8GCweUSh6WXK29cCrN",
+      "username": "homey",
+      "email": "homey@gmail.com",
+      "password": "12345",
+      "isAdmin": false,
+      "cart": []
     }
   ],
   "products": [
