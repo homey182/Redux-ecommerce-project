@@ -14,7 +14,19 @@
       "email": "homey@gmail.com",
       "password": "12345",
       "isAdmin": false,
-      "cart": []
+      "cart": [
+        {
+          "product": {
+            "id": "hvo-7OoiQuaNr7JCVrXnL",
+            "image": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/425.png?v=1645772065",
+            "title": "Wireless Headphones",
+            "price": " 59.99",
+            "description": "Noise-cancelling over-ear headphones with Bluetooth.",
+            "category": "Electronics"
+          },
+          "quantitiy": 5
+        }
+      ]
     }
   ],
   "products": [
@@ -25,6 +37,14 @@
       "price": "55.55",
       "description": "this is very tasty meal whic i erver tested \n",
       "category": "french"
+    },
+    {
+      "id": "hvo-7OoiQuaNr7JCVrXnL",
+      "image": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/425.png?v=1645772065",
+      "title": "Wireless Headphones",
+      "price": " 59.99",
+      "description": "Noise-cancelling over-ear headphones with Bluetooth.",
+      "category": "Electronics"
     }
   ],
   "carts": []
